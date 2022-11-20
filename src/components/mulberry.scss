@@ -1,0 +1,87 @@
+.mulberry-section {
+    flex: 1;
+    
+    & > .parent-link {
+
+        display: flex;
+
+        & > .left-edge {
+            height: 1px;
+            border-top: 3px solid black;
+            flex: 1;
+        }
+
+        & > .top-edge {
+            height: 20px;
+            width: 3px;
+            background-color: black;
+        }
+
+        & > .right-edge {
+            height: 1px;
+            border-top: 3px solid black;
+            flex: 1;
+        }
+    }
+
+    & > .content {
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    & > .child-link {
+        display: flex;
+        justify-content: center;
+
+        & >.bottom-edge {
+            height: 20px;
+            width: 3px;
+            background-color: black;
+        }
+    }
+
+    & > .children-section {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.mulberry-section:first-child {
+    & > .parent-link {
+        & > .left-edge {
+            visibility: hidden;
+        }
+    }
+}
+
+.mulberry-section:last-child {
+    & > .parent-link {
+        & > .right-edge {
+            visibility: hidden;
+        }
+    }
+}
+
+.mulberry-section:only-child {
+    & > .parent-link {
+        & > .left-edge {
+            visibility: hidden;
+        }
+
+        & > .right-edge {
+            visibility: hidden;
+        }
+    }
+}
+
+.mulberry-section.top-node {
+    & > .parent-link {
+        visibility: hidden;
+    }
+}
+.mulberry-section.leaf-node {
+    & > .child-link {
+        visibility: hidden;
+    }
+}
